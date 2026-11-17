@@ -4,10 +4,17 @@ import { Icon } from "@/components/icons";
 import { m } from "@/lib/messages";
 import { useProgress } from "@/lib/progress";
 import styles from "./calendar.module.css";
-import type { DayTileState } from "./day-tile";
+import type { DayState } from "./day-state";
+
+interface DayStatusProps {
+  day: number;
+  state: DayState;
+  /** Los minijuegos no tienen ticket: nunca salen como «Sin resolver». */
+  minigame: boolean;
+}
 
 /** Pastilla de estado de un día. Va en posición absoluta: aparecer no mueve nada. */
-export function DayStatus({ day, state }: { day: number; state: DayTileState }) {
+export function DayStatus({ day, state, minigame }: DayStatusProps) {
   const progress = useProgress();
 
   if (state === "locked") {
@@ -17,6 +24,8 @@ export function DayStatus({ day, state }: { day: number; state: DayTileState }) 
       </span>
     );
   }
+
+  if (minigame) return <span className={styles.status}>{m.calendar.statusMinigame}</span>;
 
   if (progress.status === "signed-in") {
     const stars = Math.max(

@@ -1,55 +1,196 @@
-.head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 16px 32px;
-  margin-bottom: 26px;
+/* Portada: panel con titular e índice a la izquierda, postales a la derecha.
+   Un solo scroll: el panel se desplaza con la página. */
+.page {
+  display: grid;
+  grid-template-columns: 420px minmax(0, 1fr);
+  align-items: start;
+  gap: 36px;
+  padding-block: 36px 72px;
 }
 
-.title {
-  font-size: clamp(1.9rem, 3.8vw, 2.7rem);
-  margin-bottom: 6px;
-}
-
-/* Altura fija: el hueco no cambia entre cargando, sin sesión y con sesión */
-.stats {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  gap: 8px 28px;
-  min-height: 56px;
-  margin: 0;
-}
-
-.stats div {
+.sidebar {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  min-width: 0;
 }
 
-.stats dt {
-  font-size: 13px;
+.heroTitle {
+  font-size: clamp(2.4rem, 3.6vw, 3.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+}
+
+.heroSub {
+  margin-top: 14px;
+  font-size: 17px;
   color: var(--muted);
 }
 
-.stats dd {
-  margin: 0;
-  font-size: 20px;
+.heroNote {
+  margin-top: 8px;
   font-weight: 700;
-  font-variant-numeric: tabular-nums;
+  color: var(--accent);
 }
 
-.prompt {
-  width: 100%;
+/* Altura mínima: el hueco no cambia entre cargando, sin sesión y con sesión */
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  margin-top: 24px;
+}
+
+.langIcons {
+  display: flex;
+  gap: 8px;
+}
+
+.indexCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.indexHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.indexHead h2 {
+  font-size: 20px;
+}
+
+.indexHead span {
+  font-size: 13px;
+}
+
+.dayIndex {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+}
+
+/* Casilla del índice: número con el color de su dificultad */
+.ix {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  background: var(--ix-bg);
+  color: var(--ix-fg);
+  font: 400 18px / 1 var(--font-display);
+  text-decoration: none;
+  transition: transform 0.12s;
+}
+
+.ix:hover {
+  transform: translateY(-2px);
+}
+
+.ix_easy {
+  --ix-bg: var(--level-easy-bg);
+  --ix-fg: var(--level-easy-fg);
+}
+
+.ix_medium {
+  --ix-bg: var(--level-medium-bg);
+  --ix-fg: var(--level-medium-fg);
+}
+
+.ix_hard {
+  --ix-bg: var(--level-hard-bg);
+  --ix-fg: var(--level-hard-fg);
+}
+
+.ix_extra {
+  --ix-bg: var(--level-extra-bg);
+  --ix-fg: var(--level-extra-fg);
+}
+
+/* Cerrado: solo el borde con el color de su nivel */
+.ixLocked {
+  background: var(--surface-2);
+  color: var(--muted);
+  box-shadow: inset 0 0 0 2px var(--ix-bg);
+}
+
+.ixToday {
+  box-shadow:
+    0 0 0 2px var(--bg),
+    0 0 0 4px var(--glow);
+}
+
+.ixDone {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font: 800 10px / 1 var(--font-body);
+}
+
+.levelLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.levelLegend span::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  border-radius: 3px;
+  vertical-align: -1px;
+  background: var(--legend);
+}
+
+.legend_easy {
+  --legend: var(--level-easy-bg);
+}
+
+.legend_medium {
+  --legend: var(--level-medium-bg);
+}
+
+.legend_hard {
+  --legend: var(--level-hard-bg);
+}
+
+.legend_extra {
+  --legend: var(--level-extra-bg);
+}
+
+.projectBy {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 13px;
   color: var(--muted);
+}
+
+@media (max-width: 1180px) {
+  .page {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .sidebar {
+    max-width: 640px;
+  }
 }
 
 /* Cuadrícula de postales: 6 columnas, los números en orden de lectura */
 .grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  grid-auto-rows: clamp(130px, 13.5vw, 168px);
+  grid-auto-rows: clamp(120px, 10.5vw, 158px);
   gap: 14px;
 }
 
@@ -57,6 +198,8 @@
   position: relative;
   display: block;
   overflow: hidden;
+  /* Al saltar desde el índice, que la cabecera fija no tape la postal */
+  scroll-margin-top: 110px;
   border-radius: var(--radius);
   background: var(--surface-2);
   color: var(--snow);

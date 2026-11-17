@@ -36,6 +36,16 @@ Usa siempre estas palabras, en el código y en la interfaz.
 - Referencia visual: `diseno/northpole-prototipo.html`, diseño **Fotos reales** y paleta **Nochebuena (oscura)**. Si el código y el prototipo no coinciden, manda el prototipo, salvo que el usuario diga otra cosa.
 - Los días del calendario muestran solo: número, etiqueta de dificultad, foto y estado (★, «Hoy», «Sin resolver», candado). **No llevan títulos ni descripción, y el calendario no lleva leyenda.**
 - Los días bloqueados se muestran en blanco y negro. El de hoy lleva un halo dorado.
+- **Portada (variante 7 del prototipo):**
+  - Panel de 420 px a la izquierda con:
+    - el H1 «Calendario de adviento de programación» y la frase corta;
+    - el botón (entrar con GitHub o abrir el ticket de hoy) con los iconos JS, TS y PY;
+    - el índice de los 24 días con el color de su dificultad (cerrado, hoy, ✓ hecho), que al pulsar baja hasta la postal;
+    - «Un proyecto de Molero».
+  - Las postales van a la derecha, sin cabecera encima.
+  - Un solo scroll: el panel no tiene barra propia. Por debajo de 1180 px, el panel va encima del calendario.
+  - Ancho máximo de la web: 1440 px.
+- Los días de minijuego muestran «Minijuego», nunca «Sin resolver».
 - Etiquetas de dificultad (iguales en cualquier paleta): Fácil `#9BE3A5`/`#0E3A18`, Media `#FFD36B`/`#4A3000`, Difícil `#FF8F86`/`#5A0D0D`, Extra `#C9D4FF`/`#1C2A66`, con 1 a 3 puntos.
 - Tipografías: Young Serif (títulos), Figtree (texto) y JetBrains Mono (código). Se sirven desde el propio dominio, sin cargarlas de Google en tiempo de ejecución.
 - Fotos: `diseno/fotos/`, todas CC0 o CC BY. Cualquier foto nueva necesita licencia libre y una entrada en `creditos.json`. Nunca se usan fotos de Google Imágenes.
@@ -218,7 +228,7 @@ Cada ticket es un paquete de datos:
 
 ### Variables de entorno
 
-Todas están en `.env.example`. La web lee `apps/web/.env.local`; la API y las migraciones, el `.env` de la raíz.
+Todas están en `.env.example`. En local van en **un solo `.env` en la raíz**: lo leen la web (`next.config.ts` lo carga), la API y las migraciones. Un `apps/web/.env.local` es opcional y tiene prioridad. En Vercel y Cloudflare se configuran en su panel.
 
 - **Públicas:** `NEXT_PUBLIC_SUPABASE_URL` y `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`.
 - **Secretas (solo servidor):** `SUPABASE_SERVICE_ROLE_KEY`, `DATABASE_URL` y `NP_TOKEN_SECRET` (compartido entre web y API).

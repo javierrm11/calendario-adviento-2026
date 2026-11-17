@@ -68,8 +68,8 @@ Lo que falta para abrir DevAdviento el 1 de diciembre a las 6:00. Primero lo que
 
 ### En tu ordenador
 
-- [ ] Copia `.env.example` como `.env` (raíz) y como `apps/web/.env.local`, y rellénalos.
-- [ ] Para ver un día abierto antes de diciembre, añade en `apps/web/.env.local`:
+- [x] Copia `.env.example` como `.env` en la raíz y rellénalo. Es el único archivo de variables que necesitas en local.
+- [ ] Para ver un día abierto antes de diciembre, añade en ese `.env`:
 
   ```
   NP_FECHA_SIMULADA=2026-12-01T07:00:00+01:00

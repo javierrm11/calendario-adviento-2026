@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { m } from "@/lib/messages";
 import styles from "./calendar.module.css";
+import type { DayState } from "./day-state";
 import { DayStatus } from "./day-status";
 
-export type DayTileState = "locked" | "today" | "open";
 /** big-desktop: grande en escritorio y normal en móvil (para que la cuadrícula de 2 columnas no deje huecos). */
 export type TileShape = "normal" | "big" | "big-desktop" | "tall" | "wide" | "banner";
 
@@ -26,12 +26,12 @@ const SHAPE_SIZES: Record<TileShape, string> = {
   "big-desktop": "(max-width: 640px) 50vw, (max-width: 1000px) 50vw, 400px",
   tall: "(max-width: 640px) 50vw, (max-width: 1000px) 25vw, 200px",
   wide: "(max-width: 640px) 50vw, (max-width: 1000px) 50vw, 400px",
-  banner: "(max-width: 640px) 50vw, 1180px",
+  banner: "(max-width: 640px) 50vw, 1000px",
 };
 
 interface DayTileProps {
   day: PublicDay;
-  state: DayTileState;
+  state: DayState;
   shape: TileShape;
   eager: boolean;
 }
@@ -67,13 +67,15 @@ export function DayTile({ day, state, shape, eager }: DayTileProps) {
       />
       <span className={styles.number}>{day.day}</span>
       <LevelTag level={day.level} label={level} className={styles.level} />
-      <DayStatus day={day.day} state={state} />
+      <DayStatus day={day.day} state={state} minigame={day.level === "extra"} />
     </>
   );
 
+  // id="dia-N": el índice del panel lateral baja hasta aquí.
+  const anchor = `dia-${day.day}`;
   if (state === "locked") {
     return (
-      <div className={className} role="img" aria-label={label}>
+      <div id={anchor} className={className} role="img" aria-label={label}>
         {content}
       </div>
     );
@@ -81,6 +83,7 @@ export function DayTile({ day, state, shape, eager }: DayTileProps) {
   // Solo se precarga el ticket de hoy: los días pasados se cargan al entrar.
   return (
     <Link
+      id={anchor}
       href={`/ticket/${day.day}`}
       prefetch={state === "today" ? undefined : false}
       className={className}

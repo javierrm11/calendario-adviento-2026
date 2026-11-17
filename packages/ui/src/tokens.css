@@ -39,6 +39,14 @@
   --level-extra-bg: #c9d4ff;
   --level-extra-fg: #1c2a66;
 
+  /* Lenguajes: colores de cada marca, iguales en cualquier paleta */
+  --lang-js-bg: #f7df1e;
+  --lang-js-fg: #1f1b00;
+  --lang-ts-bg: #3178c6;
+  --lang-ts-fg: #ffffff;
+  --lang-py-bg: #3776ab;
+  --lang-py-fg: #ffd43b;
+
   /* Botón de GitHub: colores de la marca */
   --github-bg: #24292f;
   --github-bg-hover: #000000;
@@ -60,6 +68,6 @@
   --space-5: 24px;
   --space-6: 32px;
   --space-7: 48px;
-  --content-width: 1180px;
+  --content-width: 1440px;
   --header-height: 64px;
 }

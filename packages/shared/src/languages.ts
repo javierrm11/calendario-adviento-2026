@@ -1,8 +1,8 @@
 /** Lenguajes admitidos. El orden es también el de desempate cuando dos lenguajes tienen las mismas estrellas. */
 export const LANGUAGES = [
-  { id: "js", name: "JavaScript", extension: "js" },
-  { id: "ts", name: "TypeScript", extension: "ts" },
-  { id: "py", name: "Python", extension: "py" },
+  { id: "js", name: "JavaScript", short: "JS", extension: "js" },
+  { id: "ts", name: "TypeScript", short: "TS", extension: "ts" },
+  { id: "py", name: "Python", short: "PY", extension: "py" },
 ] as const;
 
 export type LanguageId = (typeof LANGUAGES)[number]["id"];

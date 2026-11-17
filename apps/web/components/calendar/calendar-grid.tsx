@@ -1,9 +1,10 @@
-import { DAYS, isUnlocked } from "@np/shared";
+import { DAYS } from "@np/shared";
 import { Fragment } from "react";
 import { m } from "@/lib/messages";
 import { Molero } from "../molero";
 import styles from "./calendar.module.css";
-import { DayTile, type DayTileState, type TileShape } from "./day-tile";
+import { dayState } from "./day-state";
+import { DayTile, type TileShape } from "./day-tile";
 
 /** Forma de cada postal en la cuadrícula de 6 columnas. Con estas formas los números quedan en orden de lectura. */
 const SHAPES: Partial<Record<number, TileShape>> = {
@@ -24,11 +25,7 @@ export function CalendarGrid({ now, today }: { now: Date; today: number | null }
   return (
     <div className={styles.grid}>
       {DAYS.map((day) => {
-        const state: DayTileState = !isUnlocked(day.day, now)
-          ? "locked"
-          : day.day === today
-            ? "today"
-            : "open";
+        const state = dayState(day.day, now, today);
         return (
           <Fragment key={day.day}>
             {day.day === SPONSOR_BEFORE_DAY && (

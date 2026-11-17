@@ -103,6 +103,31 @@
   min-width: 0;
 }
 
+/* Icono de lenguaje: cuadrado con el código corto (JS, TS, PY) en los colores de su marca */
+.np-lang {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--size, 40px);
+  height: var(--size, 40px);
+  border-radius: calc(var(--size, 40px) * 0.25);
+  font: 500 calc(var(--size, 40px) * 0.35) / 1 var(--font-mono);
+  background: var(--lang-bg);
+  color: var(--lang-fg);
+}
+.np-lang--js {
+  --lang-bg: var(--lang-js-bg);
+  --lang-fg: var(--lang-js-fg);
+}
+.np-lang--ts {
+  --lang-bg: var(--lang-ts-bg);
+  --lang-fg: var(--lang-ts-fg);
+}
+.np-lang--py {
+  --lang-bg: var(--lang-py-bg);
+  --lang-fg: var(--lang-py-fg);
+}
+
 /* Avatar */
 .np-avatar {
   display: inline-grid;
