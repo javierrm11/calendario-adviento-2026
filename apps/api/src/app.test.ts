@@ -32,7 +32,7 @@ describe("autenticación y CORS", () => {
   it("acepta la petición previa del navegador (CORS) sin token", async () => {
     const res = await app.request("/v1/regalos", {
       method: "OPTIONS",
-      headers: { Origin: "https://northpole.dev", "Access-Control-Request-Method": "GET" },
+      headers: { Origin: "https://devadviento.dev", "Access-Control-Request-Method": "GET" },
     });
     expect(res.status).toBe(204);
     expect(res.headers.get("Access-Control-Allow-Origin")).toBe("*");

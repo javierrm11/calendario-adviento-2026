@@ -1,5 +1,5 @@
 {
-  "name": "northpole-adviento",
+  "name": "devadviento",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
     "format": "biome check --write .",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test",
-    "db:migrate": "node scripts/migrate.mjs",
+    "db:migrate": "node --env-file-if-exists=.env scripts/migrate.mjs",
     "tickets:generate": "pnpm --filter @np/tickets generate",
     "tickets:verify": "pnpm --filter @np/tickets verify"
   },

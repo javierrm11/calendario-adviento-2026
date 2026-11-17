@@ -1,4 +1,4 @@
-# NorthPole Inc. · Calendario de adviento dev
+# DevAdviento · Calendario de adviento de programación (by Molero)
 
 Calendario de adviento para la comunidad: 24 tickets del 1 al 24 de diciembre, con trabajo práctico de empresa (integrar APIs, conectar un modelo de IA, procesar datos) y algún algoritmo. Público: gente que programa o empieza y usa IA a diario. Interfaz en español.
 
@@ -26,7 +26,9 @@ Usa siempre estas palabras, en el código y en la interfaz.
 - **Puntuación = estrellas del mejor lenguaje**, no la suma de todos. La velocidad nunca puntúa.
 - Login **solo con GitHub**.
 - Los tickets llaman a la API del Polo Norte. Nunca se pide una API key de un proveedor real.
-- Patrocinador: **Molero** (calendario, "Cómo funciona" y pie). El logo definitivo está pendiente.
+- Nombre: **DevAdviento** (dominios previstos: `devadviento.dev` y `devadviento.com`). Es un proyecto de la marca **Molero**, que aparece en el calendario, en "Cómo funciona" y en el pie. El logo definitivo está pendiente.
+- El título para buscadores lleva siempre «calendario de adviento de programación»: es lo que busca la gente.
+- «API del Polo Norte» es parte del cuento de los tickets, no la marca. Por eso el código interno conserva `NP` (`@np/*`, `NP_…`, `NP-001`) y la carpeta `northpole/`.
 - Navegación: Calendario (inicio) · Ticket de hoy · Perfil · Cómo funciona.
 
 ## Diseño (decisiones cerradas)

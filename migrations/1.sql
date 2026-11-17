@@ -1,4 +1,4 @@
--- 1.sql: esquema inicial de NorthPole Inc.
+-- 1.sql: esquema inicial de DevAdviento.
 -- Perfiles de GitHub, tickets resueltos por lenguaje, pistas, envíos e insignias.
 -- Las escrituras de puntuación solo las hace el servidor con la service role (ver CLAUDE.md).
 

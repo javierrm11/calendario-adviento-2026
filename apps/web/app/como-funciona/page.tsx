@@ -95,7 +95,7 @@ export default function HowItWorksPage() {
               </p>
             ))}
           </div>
-          <pre className={styles.code}>{`POST https://api.northpole.dev/v1/chat/completions
+          <pre className={styles.code}>{`POST https://api.devadviento.dev/v1/chat/completions
 Authorization: Bearer np_tok_de_tu_cuenta
 
 {

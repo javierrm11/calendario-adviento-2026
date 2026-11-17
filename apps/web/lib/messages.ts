@@ -3,7 +3,13 @@ import type { TicketType } from "@np/tickets";
 
 /** Todos los textos de la interfaz. Se tutea, en español de España, sin emojis (CLAUDE.md). */
 export const m = {
-  brand: "NorthPole Inc.",
+  brand: "DevAdviento",
+  /** Título y descripción para buscadores: llevan las palabras que busca la gente («calendario de adviento»). */
+  meta: {
+    title: "DevAdviento: calendario de adviento de programación",
+    description:
+      "24 retos de programación del 1 al 24 de diciembre: integra APIs, conecta un modelo de IA y resuelve algoritmos en JavaScript, TypeScript o Python, desde el navegador. Gratis, by Molero.",
+  },
   nav: {
     calendar: "Calendario",
     ticket: "Ticket de hoy",
@@ -47,7 +53,7 @@ export const m = {
     label: "Patrocina el taller",
     thanks: "Gracias por hacer posible diciembre",
     short: "Patrocina",
-    long: "Molero patrocina NorthPole Inc. para que el calendario sea gratis para toda la comunidad.",
+    long: "DevAdviento es un proyecto de Molero, gratis para toda la comunidad.",
   },
   ticket: {
     breadcrumb: "Diciembre",
@@ -153,7 +159,7 @@ export const m = {
     creditDay: (day: number) => `Día ${day}`,
   },
   footer:
-    "NorthPole Inc. es un calendario de adviento para la comunidad dev. 24 tickets, del 1 al 24 de diciembre.",
+    "DevAdviento es un calendario de adviento de programación para la comunidad. 24 tickets, del 1 al 24 de diciembre.",
   notFound: {
     title: "Esta página no existe",
     text: "Revisa la dirección o vuelve al calendario.",

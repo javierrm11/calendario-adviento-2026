@@ -1,12 +1,20 @@
 # Pendiente
 
-Lo que falta para abrir NorthPole Inc. el 1 de diciembre a las 6:00. Primero lo que solo puedes hacer tú (cuentas, claves y decisiones); al final, lo que falta de desarrollo, que te puedo hacer yo.
+Lo que falta para abrir DevAdviento el 1 de diciembre a las 6:00. Primero lo que solo puedes hacer tú (cuentas, claves y decisiones); al final, lo que falta de desarrollo, que te puedo hacer yo.
 
 ## 1. Cuentas y configuración (solo tú)
 
+### Nombre: DevAdviento
+
+- [ ] Registra **devadviento.dev** y **devadviento.com** cuanto antes (el 17 de noviembre estaban libres, pero es temporada).
+- [ ] Comprueba **devadviento.es** en [dominios.es](https://www.dominios.es), que no tiene consulta automática.
+- [ ] Crea la cuenta u organización de GitHub **@devadviento** (estaba libre) y las de redes que vayas a usar.
+- [ ] En la OAuth App de GitHub, pon de nombre **DevAdviento**: es lo que ve cada participante al autorizar.
+- [ ] Logo de DevAdviento: ahora la cabecera usa una estrella provisional.
+
 ### Repositorio
 
-- [ ] `git init`, primer commit y subirlo a un repositorio **privado** de GitHub. Vercel despliega desde ahí.
+- [x] Repositorio en GitHub (`javierrm11/calendario-adviento-2026`). Vercel despliega desde ahí.
 
 ### Secreto compartido
 
@@ -42,9 +50,9 @@ Lo que falta para abrir NorthPole Inc. el 1 de diciembre a las 6:00. Primero lo 
   ```
   pnpm --filter @np/api exec wrangler login
   pnpm --filter @np/api exec wrangler secret put NP_TOKEN_SECRET
-  pnpm --filter @np/api deploy
+  pnpm --filter @np/api run deploy
   ```
-- [ ] Apunta la URL que te da (`https://northpole-api.<tu-cuenta>.workers.dev`). Va en `NP_API_URL` de la web. Si quieres, ponle un dominio propio (por ejemplo `api.tu-dominio`).
+- [ ] Apunta la URL que te da (`https://devadviento-api.<tu-cuenta>.workers.dev`). Va en `NP_API_URL` de la web. Si quieres, ponle un dominio propio (por ejemplo `api.tu-dominio`).
 
 ### Vercel (la web)
 

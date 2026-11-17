@@ -20,8 +20,10 @@ const body = Figtree({ subsets: ["latin"], variable: "--font-figtree", display: 
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap" });
 
 export const metadata: Metadata = {
-  title: { default: m.brand, template: `%s · ${m.brand}` },
-  description: m.how.lede,
+  title: { default: m.meta.title, template: `%s · ${m.brand}` },
+  description: m.meta.description,
+  applicationName: m.brand,
+  openGraph: { title: m.meta.title, description: m.meta.description, siteName: m.brand, locale: "es_ES" },
 };
 
 export const viewport: Viewport = {
