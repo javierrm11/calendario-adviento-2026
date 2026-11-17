@@ -1,0 +1,20 @@
+.footer {
+  border-top: 1px solid var(--line);
+  padding-block: 28px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 28px;
+}
+
+.sponsor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

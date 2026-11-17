@@ -1,0 +1,7 @@
+{
+  "tests": [
+    { "name": "Cuenta los regalos pendientes", "scenario": "pendientes-varios" },
+    { "name": "Devuelve 0 si no hay pendientes", "scenario": "pendientes-ninguno" },
+    { "name": "Funciona con más de 100 regalos", "scenario": "pendientes-muchos" }
+  ]
+}

@@ -1,0 +1,150 @@
+/* Estilos de los componentes compartidos (prefijo np-). */
+
+/* Etiqueta de dificultad */
+.np-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font: 800 11.5px / 1 var(--font-body);
+  white-space: nowrap;
+  background: var(--level-bg);
+  color: var(--level-fg);
+}
+.np-level--easy {
+  --level-bg: var(--level-easy-bg);
+  --level-fg: var(--level-easy-fg);
+}
+.np-level--medium {
+  --level-bg: var(--level-medium-bg);
+  --level-fg: var(--level-medium-fg);
+}
+.np-level--hard {
+  --level-bg: var(--level-hard-bg);
+  --level-fg: var(--level-hard-fg);
+}
+.np-level--extra {
+  --level-bg: var(--level-extra-bg);
+  --level-fg: var(--level-extra-fg);
+}
+.np-pips {
+  display: inline-flex;
+  gap: 2px;
+}
+.np-pips i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.28;
+}
+.np-pips i.on {
+  opacity: 1;
+}
+
+/* Botones */
+.np-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.75em 1.25em;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font: 700 15px / 1.2 var(--font-body);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.np-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.np-btn--sm {
+  padding: 0.55em 1em;
+  font-size: 14px;
+}
+.np-btn--primary {
+  background: var(--primary);
+  color: var(--primary-fg);
+}
+.np-btn--primary:hover:not(:disabled) {
+  background: var(--primary-deep);
+}
+.np-btn--ghost {
+  background: transparent;
+  color: var(--fg);
+  border-color: var(--line);
+}
+.np-btn--ghost:hover:not(:disabled) {
+  border-color: var(--muted);
+}
+.np-btn--github {
+  background: var(--github-bg);
+  color: var(--github-fg);
+}
+.np-btn--github:hover:not(:disabled) {
+  background: var(--github-bg-hover);
+}
+.np-btn svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+/* Tarjeta */
+.np-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  min-width: 0;
+}
+
+/* Avatar */
+.np-avatar {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--primary);
+  color: var(--primary-fg);
+  font-weight: 700;
+  overflow: hidden;
+}
+
+/* Estrellas */
+.np-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.np-stars > span:first-child {
+  color: var(--star);
+}
+
+/* Skeleton: mismas medidas que el contenido final, sin mover nada al cargar */
+.np-skeleton {
+  display: inline-block;
+  flex: none;
+  background: color-mix(in srgb, var(--fg) 14%, transparent);
+  border-radius: 6px;
+  animation: np-pulse 1.4s ease-in-out infinite;
+}
+.np-skeleton--circle {
+  border-radius: 50%;
+}
+@keyframes np-pulse {
+  50% {
+    opacity: 0.55;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .np-skeleton {
+    animation: none;
+  }
+}

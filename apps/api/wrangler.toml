@@ -1,0 +1,6 @@
+name = "northpole-api"
+main = "src/worker.ts"
+compatibility_date = "2026-11-01"
+
+# El secreto se configura con: pnpm --filter @np/api exec wrangler secret put NP_TOKEN_SECRET
+# En local, ponlo en apps/api/.dev.vars (NP_TOKEN_SECRET=...).

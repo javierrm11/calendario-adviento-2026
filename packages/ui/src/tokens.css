@@ -1,0 +1,65 @@
+/* Tokens de diseño: paleta Nochebuena (oscura). Ningún componente usa colores literales fuera de aquí. */
+:root {
+  color-scheme: dark;
+
+  /* Superficies y texto */
+  --bg: #7a1424;
+  --surface: #8a1d2f;
+  --surface-2: #962838;
+  --fg: #fbefe3;
+  --muted: #eec9c2;
+  --line: #a63a4a;
+
+  /* Acciones */
+  --primary: #f6ddb0;
+  --primary-fg: #5a0f1a;
+  --primary-deep: #ddbb85;
+  --accent: #ffd36b;
+  --accent-fg: #4a1a00;
+
+  /* Estados */
+  --ok: #a6e3ae;
+  --warn: #ffd36b;
+  --danger: #ff8f86;
+  --lock: #c98c93;
+  --glow: #ffb648;
+  --star: #ffd36b;
+  --snow: #fff6ec;
+  --ink: #22070c;
+  --garland-a: #ffb648;
+  --garland-b: #e2483d;
+
+  /* Etiquetas de dificultad: iguales en cualquier paleta */
+  --level-easy-bg: #9be3a5;
+  --level-easy-fg: #0e3a18;
+  --level-medium-bg: #ffd36b;
+  --level-medium-fg: #4a3000;
+  --level-hard-bg: #ff8f86;
+  --level-hard-fg: #5a0d0d;
+  --level-extra-bg: #c9d4ff;
+  --level-extra-fg: #1c2a66;
+
+  /* Botón de GitHub: colores de la marca */
+  --github-bg: #24292f;
+  --github-bg-hover: #000000;
+  --github-fg: #ffffff;
+
+  /* Tipografía: las variables --font-young-serif, --font-figtree y --font-jetbrains las pone next/font */
+  --font-display: var(--font-young-serif), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-figtree), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, Menlo, Consolas, monospace;
+
+  /* Forma y espacio */
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --content-width: 1180px;
+  --header-height: 64px;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@np/tickets",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./program": "./src/program.ts"
+  },
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "verify": "tsx scripts/verify.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@np/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@hono/node-server": "^1.19.5",
+    "@np/api": "workspace:*",
+    "@types/node": "^22.18.0",
+    "sucrase": "^3.35.1",
+    "tsx": "^4.23.15",
+    "typescript": "~5.9.3",
+    "vitest": "^3.2.4"
+  }
+}

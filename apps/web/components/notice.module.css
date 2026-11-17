@@ -1,0 +1,11 @@
+.notice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: 640px;
+}
+
+.title {
+  font-size: clamp(1.8rem, 3.6vw, 2.5rem);
+}
